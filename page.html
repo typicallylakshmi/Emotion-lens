@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmotionLens</title>
+    <!-- Include Tailwind CSS for styling (based on React code's className usage) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Additional styles to mimic ShadCN UI components */
+        .card {
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+        }
+        .scroll-area {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .muted {
+            background: #f3f4f6;
+        }
+        .text-muted-foreground {
+            color: #6b7280;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-start min-h-screen p-4">
+    <h1 class="text-3xl font-bold text-blue-600 mb-4">EmotionLens</h1>
+
+    <div class="flex flex-col md:flex-row items-center justify-center gap-4 w-full max-w-5xl">
+        <!-- Webcam Feed and Capture Card -->
+        <div class="card w-full md:w-1/2">
+            <div class="card-header">
+                <h2 class="text-xl font-bold">Live Webcam Feed</h2>
+                <p class="text-gray-500">Click below to capture and analyze your emotion.</p>
+            </div>
+            <div class="card-content flex flex-col items-center">
+                <!-- Video element for webcam feed -->
+                <video autoplay class="rounded-md shadow-md w-full max-w-md" id="webcam">
+                    <!-- JavaScript required to access webcam via navigator.mediaDevices.getUserMedia -->
+                </video>
+                <!-- Hidden canvas for capturing frames -->
+                <canvas id="canvas" class="hidden"></canvas>
+                <!-- Capture button -->
+                <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md flex items-center" id="captureButton">
+                    Capture Emotion
+                    <!-- SVG for Camera icon (approximating Lucide Camera) -->
+                    <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                </button>
+                <!-- Placeholder for detected emotion -->
+                <div class="mt-2 text-lg font-semibold hidden" id="detectedEmotion">Detected Emotion: <!-- JavaScript to update emotion --></div>
+                <!-- Placeholder for enhanced analysis -->
+                <div class="mt-2 text-sm hidden" id="enhancedAnalysis">
+                    <!-- JavaScript to update enhanced analysis from AI -->
+                </div>
+                <!-- JavaScript required for capturing frames, emotion detection, and AI integration -->
+            </div>
+        </div>
+
+        <!-- Emotion History Card -->
+        <div class="card w-full md:w-1/2">
+            <div class="card-header">
+                <h2 class="text-xl font-bold">Emotion History</h2>
+                <p class="text-gray-500">A timeline of your captured emotions.</p>
+            </div>
+            <div class="card-content h-[300px]">
+                <div class="scroll-area rounded-md h-full">
+                    <div class="flex flex-col gap-2 p-2" id="emotionHistory">
+                        <!-- Static placeholder for no emotions -->
+                        <div class="text-center text-muted-foreground">No emotions captured yet.</div>
+                        <!-- Example emotion entry (dynamic entries would be added via JavaScript) -->
+                        <!--
+                        <div class="flex items-center gap-2 p-2 rounded-md bg-gray-100">
+                            <img src="https://picsum.photos/200/150" alt="Emotion Snapshot" class="w-24 h-18 object-cover rounded-md">
+                            <div>
+                                <p class="text-sm font-semibold">Happy (0.85)</p>
+                                <p class="text-xs text-muted-foreground">12:34:56</p>
+                            </div>
+                        </div>
+                        -->
+                        <!-- JavaScript required to dynamically populate emotion history -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript to replicate React functionality -->
+    <script>
+        // Placeholder for JavaScript logic
+        // 1. Start webcam using navigator.mediaDevices.getUserMedia
+        // 2. Capture video frame to canvas on button click
+        // 3. Mock emotion detection (replace with actual AI logic)
+        // 4. Update emotion history and enhanced analysis
+        // 5. Generate emotion report on demand
+        console.log("JavaScript required for webcam, emotion detection, and dynamic updates.");
+    </script>
+</body>
+</html>
